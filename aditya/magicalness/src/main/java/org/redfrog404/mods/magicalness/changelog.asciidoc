@@ -1,0 +1,10 @@
+= Changelog
+
+== 1.0
+
+. Added Power Pellet, Sparkling Powder, and Staff of Entropic Destruction
+
+== 1.0.1
+
+. Added refilling for Staff of Entropic Destruction
+. Added Transmutation Catalyst
