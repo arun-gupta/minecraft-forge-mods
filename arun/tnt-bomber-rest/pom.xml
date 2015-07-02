@@ -24,7 +24,7 @@
     </dependencies>
 
     <build>
-        <finalName>minecraft-tntbomber</finalName>
+        <finalName>tnt-bomber-rest</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
