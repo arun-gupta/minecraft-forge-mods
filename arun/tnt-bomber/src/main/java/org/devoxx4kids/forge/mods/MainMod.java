@@ -17,7 +17,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 public class MainMod {
 	public static final String MODID = "MyMods";
 	public static final String VERSION = "1.0";
-	private static final String baseURI = "http://localhost:8080/minecraft-rest/webresources/tnt";
+	private static final String baseURI = "http://localhost:8080/minecraft-tntbomber/webresources/tnt";
 	private static final String tntCountURI = baseURI + "/count";
 	private static final String tntSpreadXURI = baseURI + "/spreadx";
 	private static final String tntSpreadYURI = baseURI + "/spready";
