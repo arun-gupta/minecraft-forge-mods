@@ -1,6 +1,7 @@
 package org.devoxx4kids.minecraft.tnt;
 
 import javax.ejb.EJB;
+import javax.inject.Named;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
@@ -12,6 +13,7 @@ import javax.ws.rs.core.MediaType;
 /**
  * @author arungupta
  */
+@Named("tntResource")
 @Path("tnt")
 public class TNTResource {
 
@@ -21,11 +23,11 @@ public class TNTResource {
     @POST
     @Consumes("text/plain")
     @Path("/count")
-    public void setTNTCount(String number) {
-        int howMany = Integer.parseInt(number);
+    public void setTNTCount(int number) {
+//        int howMany = Integer.parseInt(number);
 
-        state.setHowMany(howMany);
-        System.out.println("Setting TNTs: " + howMany);
+        state.setHowMany(number);
+        System.out.println("Setting TNTs: " + number);
     }
 
     @GET
@@ -40,8 +42,8 @@ public class TNTResource {
     @POST
     @Consumes("text/plain")
     @Path("spreadx")
-    public void setSpreadX(String number) {
-        state.setSpreadX(Integer.parseInt(number));
+    public void setSpreadX(int number) {
+        state.setSpreadX(number);
     }
 
     @GET
@@ -54,8 +56,8 @@ public class TNTResource {
     @POST
     @Consumes("text/plain")
     @Path("spready")
-    public void setSpreadY(String number) {
-        state.setSpreadY(Integer.parseInt(number));
+    public void setSpreadY(int number) {
+        state.setSpreadY(number);
     }
 
     @GET
@@ -68,8 +70,8 @@ public class TNTResource {
     @POST
     @Consumes("text/plain")
     @Path("spreadz")
-    public void setSpreadZ(String number) {
-        state.setSpreadZ(Integer.parseInt(number));
+    public void setSpreadZ(int number) {
+        state.setSpreadZ(number);
     }
 
     @GET
@@ -85,9 +87,9 @@ public class TNTResource {
             @FormParam("spreadX")String spreadX,
             @FormParam("spreadY")String spreadY,
             @FormParam("spreadZ")String spreadZ) {
-        setTNTCount(tntCount);
-        setSpreadX(spreadX);
-        setSpreadY(spreadY);
-        setSpreadZ(spreadZ);
+        setTNTCount(Integer.parseInt(tntCount));
+        setSpreadX(Integer.parseInt(spreadX));
+        setSpreadY(Integer.parseInt(spreadY));
+        setSpreadZ(Integer.parseInt(spreadZ));
     }
 }
