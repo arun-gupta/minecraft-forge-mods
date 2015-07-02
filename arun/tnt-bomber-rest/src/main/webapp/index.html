@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Minecraft TNT Bomber - Set/Get TNT Values</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h1>Minecraft TNT Bomber - Set/Get TNT Values</h1>
+        This application allows to set/get TNT values for the mod.
+
+        <!-- Replace with a prettier AngularJS/Patternfly form -->
+        <h2>Get the TNT values</h2>
+        <form>
+            <input type="submit" value="Submit"/>
+            <table>
+                <tr><td>TNT Count</td><td> HERE</td></tr>
+                <tr><td>X Spread</td><td> HERE</td></tr>
+                <tr><td>Y Spread</td><td> HERE</td></tr>
+                <tr><td>Z Spread</td><td> HERE</td></tr>
+            </table>
+        </form>
+        
+        <h2>Set the TNT values</h2>
+        <form action="webresources/tnt/form" method="POST">
+            <table>
+                <tr><td>TNT Count</td><td> <input name="count" id="count" min="1" max="100"></td></tr>
+                <tr><td>X Spread</td><td> <input name="spreadx" id="spreadx" min="0"></td></tr>
+                <tr><td>Y Spread</td><td> <input name="spready" id="spready" min="0" max="255"></td></tr>
+                <tr><td>Z Spread</td><td> <input name="spreadz" id="spreadz" min="0"></td></tr>
+            </table>
+            NOTE: X, Y, and Z spreads are in increments of 0.1<br>
+            <input type="submit" value="Submit"/>
+        </form>
+
+        <h2>REST URIs</h2>
+        <ul>
+            <li><code>webresources/tnt/count</code>: to get and set the number of TNTs</li>
+            <li><code>webresources/tnt/spreadx</code>: to get and set the spread of TNTs along X-Axis</li>
+            <li><code>webresources/tnt/spready</code>: to get and set the spread of TNTs along Y-Axis</li>
+            <li><code>webresources/tnt/spreadz</code>: to get and set the spread of TNTs along Z-Axis</li>
+        </ul>
+
+    </body>
+</html>
