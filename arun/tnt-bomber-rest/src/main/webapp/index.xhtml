@@ -8,11 +8,12 @@
     <h:body>
         <h1>Minecraft TNT Bomber - Set/Get TNT Values</h1>
         This application allows to set/get TNT values for the <a href="https://github.com/arun-gupta/minecraft-forge-mods/tree/master/arun/tnt-bomber/">TNT Bomber Mod</a>.
-
+        
         <h2>Get the TNT values</h2>
         <h:form>
             <h:commandButton value="Refresh Values" action="index" />
             <table>
+                <tr><td>Player name</td><td> #{tntResource.playerName}</td></tr>
                 <tr><td>TNT Count</td><td> #{tntResource.TNTCount}</td></tr>
                 <tr><td>X Spread</td><td> #{tntResource.spreadX}</td></tr>
                 <tr><td>Y Spread</td><td> #{tntResource.spreadY}</td></tr>
@@ -23,22 +24,24 @@
         <h2>Set the TNT values</h2>
         <h:form>
             <table>
+                <tr><td>Player Name</td><td> <h:inputText value="#{tntResource.playerName}"/></td></tr>
                 <tr><td>TNT Count</td><td> <h:inputText value="#{tntResource.TNTCount}"/></td></tr>
                 <tr><td>X Spread</td><td> <h:inputText value="#{tntResource.spreadX}"/></td></tr>
                 <tr><td>Y Spread</td><td> <h:inputText value="#{tntResource.spreadY}"/></td></tr>
                 <tr><td>Z Spread</td><td> <h:inputText value="#{tntResource.spreadZ}"/></td></tr>
             </table>
-            NOTE: X, Y, and Z spreads are in increments of 0.1<br/>
-                <h:commandButton value="Set Values" />
+            NOTE: X, Y, and Z spreads are in increments of 1<br/>
+                <h:commandButton value="Set Values">
+                </h:commandButton>
         </h:form>
 
-        <h2>REST URIs</h2>
+<!--        <h2>REST URIs</h2>
         <ul>
             <li><code>webresources/tnt/count</code>: to get and set the number of TNTs</li>
             <li><code>webresources/tnt/spreadx</code>: to get and set the spread of TNTs along X-Axis</li>
             <li><code>webresources/tnt/spready</code>: to get and set the spread of TNTs along Y-Axis</li>
             <li><code>webresources/tnt/spreadz</code>: to get and set the spread of TNTs along Z-Axis</li>
-        </ul>
+        </ul>-->
     </h:body>
 </html>
 

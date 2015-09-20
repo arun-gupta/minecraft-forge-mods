@@ -22,6 +22,7 @@ public class MainMod {
 	private static final String tntSpreadXURI = baseURI + "/spreadx";
 	private static final String tntSpreadYURI = baseURI + "/spready";
 	private static final String tntSpreadZURI = baseURI + "/spreadz";
+	public static final String playerDetailsURI = baseURI + "/details";
 
 	private static InputStream getStream;
 
@@ -46,7 +47,7 @@ public class MainMod {
 		return readInteger(tntSpreadZURI);
 	}
 
-	private static int readInteger(String endpointAddress) {
+	public static int readInteger(String endpointAddress) {
 		try {
 			byte[] bytes = new byte[10];
 			int read = getEndpoint(endpointAddress).read(bytes);
@@ -54,6 +55,20 @@ public class MainMod {
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
+	}
+
+	public static String readString(String endpointAddress) {
+		try {
+			byte[] bytes = new byte[256];
+			int read = getEndpoint(endpointAddress).read(bytes);
+			return new String(bytes, 0, read);
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
+	private static void readAttribute(String name, String endpointAddress) {
+		System.out.println(readString(endpointAddress));
 	}
 
 	private static InputStream getEndpoint(String endpointAddress)

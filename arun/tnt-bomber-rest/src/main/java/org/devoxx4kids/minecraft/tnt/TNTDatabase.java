@@ -7,11 +7,20 @@ import javax.ejb.Singleton;
  */
 @Singleton
 public class TNTDatabase {
+    private String playerName;
     private int howMany;
     private int spreadX;
     private int spreadY;
     private int spreadZ;
 
+    public String getPlayerName() {
+        return playerName;
+    }
+
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
+    }
+    
     public int getHowMany() {
         return howMany;
     }
